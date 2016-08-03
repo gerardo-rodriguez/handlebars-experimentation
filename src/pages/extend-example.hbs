@@ -1,0 +1,17 @@
+{{! We are "extending" `layouts/layout-one`}}
+{{#> layouts/layout-one title="First Layout"}}
+
+  {{! This is similar to the "content" helper}}
+  {{#*inline "header"}}
+    <h1>Goodnight Moon</h1>
+  {{/inline}}
+
+  {{#*inline "main" mode="append"}}
+    <p>Dolor sit amet.</p>
+  {{/inline}}
+
+  {{#*inline "footer" mode="prepend"}}
+    <p>MIT License</p>
+  {{/inline}}
+
+{{/layouts/layout-one}}
