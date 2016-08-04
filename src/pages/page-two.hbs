@@ -1,0 +1,26 @@
+{{#> layouts/base title="Page Two" }}
+
+  {{!-- Let's add a second stylesheet for this layout. --}}
+  {{#*inline "head-block"}}
+    <link rel="stylesheet" href="/some-other-styles.css">
+  {{/inline}}
+
+  {{!-- Let's change the hero image for this layout. --}}
+  {{#*inline "hero-block"}}
+    {{> includes/hero
+      hero-src="/img/hero-2.png"
+      hero-alt="Hero 2 alt title"
+    }}
+  {{/inline}}
+
+  {{!-- Let's override the "footer-block" content. --}}
+  {{#*inline "footer-block"}}
+    <p>We are now overriding the default "footer-block" content with this content.</p>
+  {{/inline}}
+
+  {{!-- Let's add another script for this layout. --}}
+  {{#*inline "scripts-block"}}
+    <script src="/new-script.js"></script>
+  {{/inline}}
+
+{{/layouts/base}}
