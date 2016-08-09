@@ -14,11 +14,8 @@
   ],
   "author": "Gerardo Rodriguez",
   "devDependencies": {
-    "babel-core": "^6.11.4",
-    "babel-preset-es2015": "^6.9.0",
     "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.7"
