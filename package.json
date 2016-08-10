@@ -15,6 +15,7 @@
   "author": "Gerardo Rodriguez",
   "devDependencies": {
     "browser-sync": "^2.14.0",
+    "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-compile-handlebars": "^0.6.1",
     "gulp-rename": "^1.2.2",
