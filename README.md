@@ -2,7 +2,7 @@
 
 This was a curiosity-driven experiment to learn more about Handlebars partials.
 
-## Getting started
+## Running the demo
 
 Clone this repo and run:
 
