@@ -25,13 +25,15 @@
 
     <footer>
       {{#> footer-block}}
-        {{!-- The footer.hbs include is the default content, but can be overriden. --}}
+        {{!--
+          The `includes/footer` partial is the default content,
+          but can be overridden.
+        --}}
         {{> includes/footer }}
       {{/footer-block}}
     </footer>
-    <script src="/main.js"></script>
     {{#> scripts-block}}
-      {{!-- custom scripts can be added --}}
+      {{!-- Custom scripts per page can be added. --}}
     {{/scripts-block}}
   </body>
 </html>
