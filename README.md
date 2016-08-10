@@ -1,6 +1,12 @@
-Exploring Handlebars partials a bit more.
+# Exploring Handlebars partials
 
-To see it in action:
+This was a curiosity-driven experiment to learn more about Handlebars partials.
+
+## Getting started
+
+Clone this repo and run:
+
 ```
 npm start
 ```
+This will install all of the dependencies and start a local server.
