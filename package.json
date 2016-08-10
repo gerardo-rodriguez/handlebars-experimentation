@@ -2,17 +2,11 @@
   "name": "handlebars-experimentation",
   "version": "0.0.1",
   "description": "Experimenting with Handlebars partials.",
-  "main": "gulpfile.js",
   "scripts": {
     "prestart": "npm install",
     "start": "gulp --dev",
     "build": "gulp"
   },
-  "keywords": [
-    "handlebars",
-    "partials"
-  ],
-  "author": "Gerardo Rodriguez",
   "devDependencies": {
     "browser-sync": "^2.14.0",
     "del": "^2.2.1",
