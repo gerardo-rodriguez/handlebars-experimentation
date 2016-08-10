@@ -1,6 +1,5 @@
 'use strict';
 
-const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 const env = require('gulp-util').env;
 const gulp = require('gulp');
@@ -30,11 +29,6 @@ gulp.task('html', () => {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('js', () => {
-  return gulp.src('./src/scripts/main.js')
-    .pipe(babel())
-    .pipe(gulp.dest('./dist'));
-});
 
 gulp.task('serve', () => {
   browserSync.init({
@@ -51,7 +45,7 @@ gulp.task('watch', () => {
   });
 });
 
-gulp.task('default', ['js', 'html'], done => {
+gulp.task('default', ['html'], done => {
   if (env.dev) {
     gulp.start('serve');
     gulp.start('watch');
