@@ -1,32 +1,35 @@
 'use strict';
 
 const browserSync = require('browser-sync').create();
+const del = require('del');
 const env = require('gulp-util').env;
 const gulp = require('gulp');
 const handlebars = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 
-const watchers = [
-  {
-    match: ['./src/**/*.js'],
-    tasks: ['js']
-  },
-  {
-    match: ['./src/**/*.hbs'],
-    tasks: ['html']
-  }
-];
+const config = {
+  src: './src',
+  dest: './dist',
+  watchers: [
+    {
+      match: ['./src/**/*.hbs'],
+      tasks: ['html']
+    }
+  ]
+};
 
-gulp.task('html', () => {
-  return gulp.src('./src/pages/*.hbs')
+gulp.task('clean', () => del(config.dest));
+
+gulp.task('html', ['clean'], () => {
+  return gulp.src(`${config.src}/pages/*.hbs`)
     .pipe(handlebars({}, {
       ignorePartials: true,
-      batch: ['./src/partials']
+      batch: [`${config.src}/partials`]
     }))
     .pipe(rename({
       extname: '.html'
     }))
-    .pipe(gulp.dest('./dist'));
+    .pipe(gulp.dest(config.dest));
 });
 
 
@@ -34,13 +37,13 @@ gulp.task('serve', () => {
   browserSync.init({
     open: false,
     notify: false,
-    files: ['./dist/**/*'],
-    server: './dist'
+    files: [`${config.dest}/**/*`],
+    server: config.dest
   });
 });
 
 gulp.task('watch', () => {
-  watchers.forEach(item => {
+  config.watchers.forEach(item => {
     gulp.watch(item.match, item.tasks);
   });
 });
